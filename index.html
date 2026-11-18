@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <title>SSHHUIII — A Strange Signal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span>SSHHUIII</span>
+      </div>
+      <div class="status"><span class="pulse"></span><span id="statusText">SIGNAL FOUND</span></div>
+    </header>
+
+    <section class="game-grid">
+      <aside class="map-panel">
+        <p class="eyebrow">LOCATION</p>
+        <h1 id="locationName">The Station</h1>
+        <div class="map" id="map" aria-label="Station map">
+          <div class="map-line vertical"></div>
+          <div class="map-line horizontal"></div>
+          <button class="node" data-location="station" aria-label="The Station"><span>01</span></button>
+          <button class="node" data-location="server" aria-label="Server Room"><span>02</span></button>
+          <button class="node" data-location="observatory" aria-label="Observatory"><span>03</span></button>
+          <button class="node" data-location="archive" aria-label="The Archive"><span>04</span></button>
+          <button class="node" data-location="signal" aria-label="The Signal"><span>05</span></button>
+        </div>
+        <div class="inventory">
+          <p class="eyebrow">INVENTORY</p>
+          <div id="inventoryList" class="inventory-list">
+            <span class="empty">Nothing yet</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="story-panel">
+        <div class="chapter-row">
+          <span id="chapterLabel">CHAPTER 01</span>
+          <span id="progressLabel">0 / 8</span>
+        </div>
+        <article id="storyContent" class="story" aria-live="polite"></article>
+        <div id="choices" class="choices"></div>
+        <div class="actions">
+          <button id="saveButton" class="text-button">SAVE</button>
+          <button id="restartButton" class="text-button">RESTART</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="game.js"></script>
+</body>
+</html>
