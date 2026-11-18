@@ -2,62 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090b12">
-  <title>SSHHUIII — A Strange Signal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0d1718">
+  <title>SSHHUIII — Temple Run</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <main class="shell">
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand-mark"></span>
-        <span>SSHHUIII</span>
+  <main class="game-wrap">
+    <canvas id="game" width="960" height="600" aria-label="SSHHUIII endless runner game"></canvas>
+
+    <div class="hud" id="hud">
+      <div class="brand">SSHHUIII</div>
+      <div class="stats">
+        <div class="stat"><span>SCORE</span><strong id="score">00000</strong></div>
+        <div class="stat"><span>BEST</span><strong id="best">00000</strong></div>
+        <div class="coin-stat"><span class="coin-icon"></span><strong id="coins">0</strong></div>
       </div>
-      <div class="status"><span class="pulse"></span><span id="statusText">SIGNAL FOUND</span></div>
-    </header>
+    </div>
 
-    <section class="game-grid">
-      <aside class="map-panel">
-        <p class="eyebrow">LOCATION</p>
-        <h1 id="locationName">The Station</h1>
-        <div class="map" id="map" aria-label="Station map">
-          <div class="map-line vertical"></div>
-          <div class="map-line horizontal"></div>
-          <button class="node" data-location="station" aria-label="The Station"><span>01</span></button>
-          <button class="node" data-location="server" aria-label="Server Room"><span>02</span></button>
-          <button class="node" data-location="observatory" aria-label="Observatory"><span>03</span></button>
-          <button class="node" data-location="archive" aria-label="The Archive"><span>04</span></button>
-          <button class="node" data-location="signal" aria-label="The Signal"><span>05</span></button>
+    <section class="overlay visible" id="menu">
+      <div class="menu-card">
+        <p class="kicker">AN ANCIENT ESCAPE</p>
+        <h1>RUN<br><span>THE RUINS</span></h1>
+        <p class="subtitle">The temple is awake. Don't look back.</p>
+        <button id="playButton" class="play-button"><span>START RUN</span><b>→</b></button>
+        <div class="controls">
+          <span><kbd>←</kbd><kbd>→</kbd> MOVE</span>
+          <span><kbd>↑</kbd> JUMP</span>
+          <span><kbd>↓</kbd> SLIDE</span>
         </div>
-        <div class="inventory">
-          <p class="eyebrow">INVENTORY</p>
-          <div id="inventoryList" class="inventory-list">
-            <span class="empty">Nothing yet</span>
-          </div>
-        </div>
-      </aside>
-
-      <section class="story-panel">
-        <div class="chapter-row">
-          <span id="chapterLabel">CHAPTER 01</span>
-          <span id="progressLabel">0 / 8</span>
-        </div>
-        <article id="storyContent" class="story" aria-live="polite"></article>
-        <div id="choices" class="choices"></div>
-        <div class="actions">
-          <button id="saveButton" class="text-button">SAVE</button>
-          <button id="restartButton" class="text-button">RESTART</button>
-        </div>
-      </section>
+      </div>
     </section>
-  </main>
 
-  <div id="toast" class="toast" role="status"></div>
+    <section class="overlay" id="gameOver">
+      <div class="menu-card game-over-card">
+        <p class="kicker">THE RUINS CAUGHT YOU</p>
+        <h2>RUN<br><span>ENDED</span></h2>
+        <div class="result-row">
+          <div><span>SCORE</span><strong id="finalScore">0</strong></div>
+          <div><span>COINS</span><strong id="finalCoins">0</strong></div>
+        </div>
+        <button id="restartButton" class="play-button"><span>RUN AGAIN</span><b>↻</b></button>
+      </div>
+    </section>
+
+    <button id="pauseButton" class="pause-button" aria-label="Pause game">Ⅱ</button>
+  </main>
   <script src="game.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
-# SSHHUIII
+# SSHHUIII — Temple Run
 
-A polished, atmospheric browser text-adventure game about a mysterious signal, a lonely station, and a voice that knows you too well.
+A fast, polished browser endless runner set in an ancient jungle temple.
 
 ## Play
 
@@ -14,15 +14,17 @@ Then visit `http://localhost:5500`.
 
 ## Features
 
-- Branching story with multiple endings
-- Inventory and locked choices
-- Interactive station map
-- Keyboard controls (number keys 1–9)
-- Local save and restart controls
+- Three-lane running
+- Jump, slide, and lane-change controls
+- Coins, obstacles, increasing speed, and score tracking
+- Saved best score
+- Keyboard, touch, and swipe support
 - Responsive desktop and mobile layout
 
 ## Controls
 
-- Click a choice or press its number key
-- Use **SAVE** to store progress in the browser
-- Use **RESTART** to begin a new journey
+- **Left / Right arrows** or **A / D** — Change lanes
+- **Up arrow**, **W**, or **Space** — Jump
+- **Down arrow** or **S** — Slide
+- **P** — Pause
+- On mobile — Swipe left, right, up, or down
